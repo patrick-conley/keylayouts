@@ -1,0 +1,177 @@
+// $XKeyboardConfig$
+
+// To install a new keyboard layout:
+//
+// To /usr/share/X11/xkb/rules/xorg.xml (symlink to base.xml) and evdev.xml,
+// add (at the end of layoutList):
+//
+//      <layout>
+//         <configItem>
+//            <name>pconley</name>
+//         <shortDescription>Dvorak</shortDescription>
+//            <description>PConley</description>
+//            <languageList><iso639Id>eng</iso639Id></languageList>
+//         </configItem>
+//         <variantList>
+//            <variant>
+//               <configItem>
+//                  <name>dvp</name>
+//                  <shortDescription>Programming</shortDescription>
+//                  <description>Programming</description>
+//               </configItem>
+//            </variant>
+//         </variantList>
+//      </layout>
+//
+// To xorg.lst and evdev.lst
+// (at the end of ! layout):
+//
+// pconley        Dvorak
+//
+// (at the end of ! variant):
+//
+// dvp         pconley: Programmer Dvorak
+
+// based on a keyboard map from an 'xkb/symbols/dk' file
+//
+// $XFree86: xc/programs/xkbcomp/symbols/dvorak,v 1.5 2004/01/03 16:35:07 herrb Exp $
+
+default
+partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "PConley - Dvorak";
+
+    key <TLDE> { [     dollar, asciitilde   ] };
+
+    key <AE01> { [  ampersand, percent      ] };
+    key <AE02> { [          7, bracketleft  ] };
+    key <AE03> { [          5, braceleft    ] };
+    key <AE04> { [          3, braceright   ] };
+    key <AE05> { [          1, less         ] };
+    key <AE06> { [          9, equal        ] };
+    key <AE07> { [          0, asterisk     ] };
+    key <AE08> { [          2, greater      ] };
+    key <AE09> { [          4, plus         ] };
+    key <AE10> { [          6, bracketright ] };
+    key <AE11> { [          8, exclam       ] };
+    key <AE12> { [ numbersign, underscore   ] };
+
+    key <AD01> { [ apostrophe, quotedbl     ] };
+    key <AD02> { [      comma, parenleft    ] };
+    key <AD03> { [     period, parenright   ] };
+    key <AD04> { [          p, P            ] };
+    key <AD05> { [          y, Y            ] };
+    key <AD06> { [          f, F            ] };
+    key <AD07> { [          g, G            ] };
+    key <AD08> { [          c, C            ] };
+    key <AD09> { [          r, R            ] };
+    key <AD10> { [          l, L            ] };
+    key <AD11> { [      slash, question     ] };
+    key <AD12> { [        bar, at           ] };
+
+    key <AC01> { [          a, A            ] };
+    key <AC02> { [          o, O            ] };
+    key <AC03> { [          e, E            ] };
+    key <AC04> { [          u, U            ] };
+    key <AC05> { [          i, I            ] };
+    key <AC06> { [          d, D            ] };
+    key <AC07> { [          h, H            ] };
+    key <AC08> { [          t, T            ] };
+    key <AC09> { [          n, N            ] };
+    key <AC10> { [          s, S            ] };
+    key <AC11> { [      minus, backslash    ] };
+
+    key <AB01> { [  semicolon, colon        ] };
+    key <AB02> { [          q, Q            ] };
+    key <AB03> { [          j, J            ] };
+    key <AB04> { [          k, K            ] };
+    key <AB05> { [          x, X            ] };
+    key <AB06> { [          b, B            ] };
+    key <AB07> { [          m, M            ] };
+    key <AB08> { [          w, W            ] };
+    key <AB09> { [          v, V            ] };
+    key <AB10> { [          z, Z            ] };
+
+    key <BKSL> { [      grave, asciicircum  ] };
+};
+
+// Programmer Dvorak, by Roland Kaufmann <rlndkfmn at gmail dot com>
+// License: BSD, available at <http://www.kaufmann.no/roland/dvorak/license.html>
+// Main features: Numbers are in shift position (like French), symbols have been
+// placed in locations that give good hand-alternation and finger rolling with
+// symbols that usually follows, accented characters are possible for I18N.
+// modified by P.Conley
+partial alphanumeric_keys
+xkb_symbols "dvp" {
+    include "pconley(basic)"
+
+    name[Group1] = "PConley - Programmer Dvorak";
+
+    //             Unmodified       Shift           AltGr            Shift+AltGr
+    key <AE01> { [    ampersand, percent ] };
+    key <AE02> { [  bracketleft, 7 ] };
+    key <AE03> { [    braceleft, 5 ] };
+    key <AE04> { [   braceright, 3 ] };
+    key <AE05> { [         less, 1 ] };
+    key <AE06> { [        equal, 9 ] };
+    key <AE07> { [     asterisk, 0 ] };
+    key <AE08> { [      greater, 2 ] };
+    key <AE09> { [         plus, 4 ] };
+    key <AE10> { [ bracketright, 6 ] };
+    key <AE11> { [       exclam, 8 ] };
+
+    // lower row, left side
+    key <AB01> { [ apostrophe,      colon ] };
+    key <AD01> { [  semicolon,   quotedbl ] };
+};
+
+// Variant of PConley - Dvorak meant to be more compatible with the Ergodox
+// keyboard
+partial alphanumeric_keys
+xkb_symbols "dve" {
+    include "pconley(basic)"
+
+    name[Group1] = "PConley - Dvorak (Ergodox)";
+
+    //             Unmodified       Shift           AltGr            Shift+AltGr
+    key <AE01> { [          7, bracketleft  ] };
+    key <AE02> { [          5, braceleft    ] };
+    key <AE03> { [          3, braceright   ] };
+    key <AE04> { [          1, less         ] };
+    key <AE05> { [          9, equal        ] };
+    key <AE06> { [          0, asterisk     ] };
+    key <AE07> { [          2, greater      ] };
+    key <AE08> { [          4, plus         ] };
+    key <AE09> { [          6, bracketright ] };
+    key <AE10> { [          8, exclam       ] };
+    key <AE11> { [ numbersign, underscore   ] };
+    key <AE12> { [  ampersand, percent      ] };
+};
+
+// Variant of PConley - Programmer Dvorak meant to be more compatible with the
+// Ergodox keyboard
+partial alphanumeric_keys
+xkb_symbols "dep" {
+    include "pconley(basic)"
+
+    name[Group1] = "PConley - Programmer Dvorak (Ergodox)";
+
+    //             Unmodified       Shift           AltGr            Shift+AltGr
+    key <AE01> { [  bracketleft, 7 ] };
+    key <AE02> { [    braceleft, 5 ] };
+    key <AE03> { [   braceright, 3 ] };
+    key <AE04> { [         less, 1 ] };
+    key <AE05> { [        equal, 9 ] };
+    key <AE06> { [     asterisk, 0 ] };
+    key <AE07> { [      greater, 2 ] };
+    key <AE08> { [         plus, 4 ] };
+    key <AE09> { [ bracketright, 6 ] };
+    key <AE10> { [       exclam, 8 ] };
+    key <AE12> { [    ampersand, percent ] };
+
+    // lower row, left side
+    key <AB01> { [ apostrophe,      colon ] };
+    key <AD01> { [  semicolon,   quotedbl ] };
+};
+
