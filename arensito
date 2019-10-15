@@ -3,6 +3,9 @@ xkb_symbols "arensito" {
 
     name[Group1] = "Arensito";
 
+    // Add a second dollar sign for switching windows
+    key <TLDE> { [     dollar, asciitilde   ] };
+
     key <AD01> { [         q,          Q, braceleft    ] };
     key <AD02> { [         l,          L, braceright   ] };
     key <AD03> { [     comma,   question, bracketleft  ] };
@@ -18,24 +21,24 @@ xkb_symbols "arensito" {
     key <AC01> { [         a,          A, semicolon    ] };
     key <AC02> { [         r,          R, slash        ] };
     key <AC03> { [         e,          E, minus        ] };
-    key <AC04> { [         n,          N, 0            ] };
+    key <AC04> { [         n,          N, 1            ] };
     key <AC05> { [         b,          B, colon        ] };
     key <AC06> { [         g,          G, backslash    ] };
-    key <AC07> { [         s,          S, 1            ] };
+    key <AC07> { [         s,          S, 2            ] };
     key <AC08> { [         i,          I, parenleft    ] };
     key <AC09> { [         t,          T, parenright   ] };
     key <AC10> { [         o,          O, equal        ] };
     key <AC11> { [  quotedbl, asciitilde, asciicircum  ] };
 
-    key <AB01> { [         z,          Z, 6            ] };
-    key <AB02> { [         w,          W, 7            ] };
-    key <AB03> { [    period,     exclam, 8            ] };
+    key <AB01> { [         z,          Z, 7            ] };
+    key <AB02> { [         w,          W, 5            ] };
+    key <AB03> { [    period,     exclam, 3            ] };
     key <AB04> { [         h,          H, 9            ] };
     key <AB05> { [         j,          J, plus         ] };
     key <AB06> { [         v,          V, asterisk     ] };
-    key <AB07> { [         c,          C, 2            ] };
-    key <AB08> { [         y,          Y, 3            ] };
-    key <AB09> { [         m,          M, 4            ] };
-    key <AB10> { [         x,          X, 5            ] };
+    key <AB07> { [         c,          C, 0            ] };
+    key <AB08> { [         y,          Y, 4            ] };
+    key <AB09> { [         m,          M, 6            ] };
+    key <AB10> { [         x,          X, 8            ] };
 };
 
