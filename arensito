@@ -3,6 +3,8 @@ xkb_symbols "arensito" {
 
     name[Group1] = "Arensito";
 
+    include "level3(rwin_switch)"
+
     // Add a second dollar sign for switching windows
     key <TLDE> { [     dollar, asciitilde   ] };
 

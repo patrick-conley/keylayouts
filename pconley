@@ -36,64 +36,67 @@
 //
 // $XFree86: xc/programs/xkbcomp/symbols/dvorak,v 1.5 2004/01/03 16:35:07 herrb Exp $
 
+// A modified version of Programmer Dvorak (below) favouring numbers over
+// symbols. This one also supports a 40% linear board with the third level
 default
 partial alphanumeric_keys
 xkb_symbols "basic" {
+    include "level3(rwin_switch)"
 
     name[Group1]= "PConley - Dvorak";
 
-    key <TLDE> { [     dollar, asciitilde   ] };
+    key <TLDE> { [ dollar, asciitilde                   ] };
 
-    key <AE01> { [  ampersand, percent      ] };
-    key <AE02> { [          7, bracketleft  ] };
-    key <AE03> { [          5, braceleft    ] };
-    key <AE04> { [          3, braceright   ] };
-    key <AE05> { [          1, less         ] };
-    key <AE06> { [          9, equal        ] };
-    key <AE07> { [          0, asterisk     ] };
-    key <AE08> { [          2, greater      ] };
-    key <AE09> { [          4, plus         ] };
-    key <AE10> { [          6, bracketright ] };
-    key <AE11> { [          8, exclam       ] };
-    key <AE12> { [ numbersign, underscore   ] };
+    key <AE01> { [ ampersand,  percent                  ] }; // not on ergodox
+    key <AE02> { [ 7,          bracketleft              ] }; // not on ergodox
+    key <AE03> { [ 5,          braceleft                ] }; // not on ergodox
+    key <AE04> { [ 3,          braceright               ] }; // not on ergodox
+    key <AE05> { [ 1,          less                     ] }; // not on ergodox
+    key <AE06> { [ 9,          equal                    ] }; // not on ergodox
+    key <AE07> { [ 0,          asterisk                 ] }; // not on ergodox
+    key <AE08> { [ 2,          greater                  ] }; // not on ergodox
+    key <AE09> { [ 4,          plus                     ] }; // not on ergodox
+    key <AE10> { [ 6,          bracketright             ] }; // not on ergodox
+    key <AE11> { [ 8,          exclam                   ] }; // not on ergodox
+    key <AE12> { [ numbersign, underscore, at           ] };
 
-    key <AD01> { [ apostrophe, quotedbl     ] };
-    key <AD02> { [      comma, parenleft    ] };
-    key <AD03> { [     period, parenright   ] };
-    key <AD04> { [          p, P            ] };
-    key <AD05> { [          y, Y            ] };
-    key <AD06> { [          f, F            ] };
-    key <AD07> { [          g, G            ] };
-    key <AD08> { [          c, C            ] };
-    key <AD09> { [          r, R            ] };
-    key <AD10> { [          l, L            ] };
-    key <AD11> { [      slash, question     ] };
-    key <AD12> { [        bar, at           ] };
+    key <AD01> { [ apostrophe, quotedbl,   asciitilde   ] };
+    key <AD02> { [ comma,      parenleft,  bracketleft  ] };
+    key <AD03> { [ period,     parenright, braceleft    ] };
+    key <AD04> { [ p,          P,          bar          ] };
+    key <AD05> { [ y,          Y                        ] };
+    key <AD06> { [ f,          F                        ] };
+    key <AD07> { [ g,          G,          ampersand    ] };
+    key <AD08> { [ c,          C,          braceright   ] };
+    key <AD09> { [ r,          R,          bracketright ] };
+    key <AD10> { [ l,          L,          equal        ] };
+    key <AD11> { [ slash,      question                 ] }; // not on ergodox
+    key <AD12> { [ bar,        at                       ] }; // not on ergodox
 
-    key <AC01> { [          a, A            ] };
-    key <AC02> { [          o, O            ] };
-    key <AC03> { [          e, E            ] };
-    key <AC04> { [          u, U            ] };
-    key <AC05> { [          i, I            ] };
-    key <AC06> { [          d, D            ] };
-    key <AC07> { [          h, H            ] };
-    key <AC08> { [          t, T            ] };
-    key <AC09> { [          n, N            ] };
-    key <AC10> { [          s, S            ] };
-    key <AC11> { [      minus, backslash    ] };
+    key <AC01> { [ a,          A,          asciicircum  ] };
+    key <AC02> { [ o,          O,          dollar       ] };
+    key <AC03> { [ e,          E,          3            ] };
+    key <AC04> { [ u,          U,          1            ] };
+    key <AC05> { [ i,          I,          5            ] };
+    key <AC06> { [ d,          D,          4            ] };
+    key <AC07> { [ h,          H,          0            ] };
+    key <AC08> { [ t,          T,          2            ] };
+    key <AC09> { [ n,          N,          slash        ] };
+    key <AC10> { [ s,          S,          percent      ] };
+    key <AC11> { [ minus,      backslash,  grave        ] };
 
-    key <AB01> { [  semicolon, colon        ] };
-    key <AB02> { [          q, Q            ] };
-    key <AB03> { [          j, J            ] };
-    key <AB04> { [          k, K            ] };
-    key <AB05> { [          x, X            ] };
-    key <AB06> { [          b, B            ] };
-    key <AB07> { [          m, M            ] };
-    key <AB08> { [          w, W            ] };
-    key <AB09> { [          v, V            ] };
-    key <AB10> { [          z, Z            ] };
+    key <AB01> { [ semicolon,  colon,      9            ] };
+    key <AB02> { [ q,          Q,          7            ] };
+    key <AB03> { [ j,          J,          question     ] };
+    key <AB04> { [ k,          K,          plus         ] };
+    key <AB05> { [ x,          X,          less         ] };
+    key <AB06> { [ b,          B,          greater      ] };
+    key <AB07> { [ m,          M,          asterisk     ] };
+    key <AB08> { [ w,          W,          exclam       ] };
+    key <AB09> { [ v,          V,          6            ] };
+    key <AB10> { [ z,          Z,          8            ] };
 
-    key <BKSL> { [      grave, asciicircum  ] };
+    key <BKSL> { [ grave,      asciicircum              ] }; // not on ergodox
 };
 
 // Programmer Dvorak, by Roland Kaufmann <rlndkfmn at gmail dot com>
@@ -108,7 +111,6 @@ xkb_symbols "dvp" {
 
     name[Group1] = "PConley - Programmer Dvorak";
 
-    //             Unmodified       Shift           AltGr            Shift+AltGr
     key <AE01> { [    ampersand, percent ] };
     key <AE02> { [  bracketleft, 7 ] };
     key <AE03> { [    braceleft, 5 ] };
@@ -134,7 +136,6 @@ xkb_symbols "dve" {
 
     name[Group1] = "PConley - Dvorak (Ergodox)";
 
-    //             Unmodified       Shift           AltGr            Shift+AltGr
     key <AE01> { [          7, bracketleft  ] };
     key <AE02> { [          5, braceleft    ] };
     key <AE03> { [          3, braceright   ] };
@@ -157,7 +158,6 @@ xkb_symbols "dep" {
 
     name[Group1] = "PConley - Programmer Dvorak (Ergodox)";
 
-    //             Unmodified       Shift           AltGr            Shift+AltGr
     key <AE01> { [  bracketleft, 7 ] };
     key <AE02> { [    braceleft, 5 ] };
     key <AE03> { [   braceright, 3 ] };
@@ -170,7 +170,6 @@ xkb_symbols "dep" {
     key <AE10> { [       exclam, 8 ] };
     key <AE12> { [    ampersand, percent ] };
 
-    // lower row, left side
     key <AB01> { [ apostrophe,      colon ] };
     key <AD01> { [  semicolon,   quotedbl ] };
 };
